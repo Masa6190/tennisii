@@ -1,0 +1,57 @@
+@mixin main () {
+  margin-top: 50px;
+  margin-left: 150px;
+  width: calc(100vw - 50px);
+}
+
+.wrapper {
+  background-color: greenyellow;
+  &__main {
+    display: flex;
+    height: 100vh;
+  }
+}
+  .header {
+    height: 50px;
+    background-color: red;
+    width: 100vw;
+    position: fixed;
+    &__left {
+      font-size: 38px;
+      color: seagreen;
+      float: left;
+    }
+    &__right  {
+      text-align: right;
+      float: right;
+    }
+  }
+  .side {
+    width: 150px;
+    height: calc(100vh - 50px);
+    background-color: orange;
+    margin-top: 50px;
+    position: fixed;
+  }
+
+  .indexmain {
+    @include main
+  }
+  
+  .newmain {
+    @include main
+  }
+
+  ul.header__right {
+    
+  }
+  ul.header__right li {
+    display: inline-block;
+    padding: 5px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  

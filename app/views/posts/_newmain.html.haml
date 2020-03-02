@@ -1,0 +1,24 @@
+.newmain
+  新規募集
+  .newmain__message
+    = form_for @post do |f|
+      タイトル
+      = f.text_field :title, class: 'title', placeholder: 'タイトル'
+      %br
+      募集本文
+      = f.text_area :main, class: 'bosyuu', placeholder: '本文'
+      %br
+      開催場所
+      = f.text_field :place, class: 'place', placeholder: '場所'
+      %br
+      募集人数 
+      = f.number_field :person, class: 'person', placeholder: '募集人数'
+      %br
+      開始時間
+      = f.datetime_local_field :starttime, class: 'starttime'
+      %br
+      参加料
+      = f.number_field :money, class: 'money', placeholder: ''
+      円
+      %br
+      = f.submit '募集開始', class: 'sub' 
