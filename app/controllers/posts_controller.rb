@@ -11,10 +11,12 @@ class PostsController < ApplicationController
   def create
     @post =Post.new(post_params)
     if @post.save
-      alert "投稿完了"
-      # redirect_to action: :index
+      # alert "投稿完了"
+      flash[:notice] = '募集開始しました'
+      redirect_to posts_path
     else
       # redirect_to :action => 'new'
+      flash.now[:alert] = '入力されていない箇所があります'
       render 'new'
     end
   end
