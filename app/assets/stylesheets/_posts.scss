@@ -16,6 +16,7 @@
     background-color: red;
     width: 100vw;
     position: fixed;
+
     &__left {
       font-size: 38px;
       color: seagreen;
@@ -39,6 +40,10 @@
   }
   
   .newmain {
+    @include main
+  }
+
+  .createmain {
     @include main
   }
 
