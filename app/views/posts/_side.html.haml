@@ -1,7 +1,8 @@
 .side
   %ul.side__menu
-    %li.side__menu--new
-      新規投稿
+    = link_to new_post_path do
+      %li.side__menu--new
+        新規投稿
     %li.side__menu--serch
       探す
     %li.side__menu--city

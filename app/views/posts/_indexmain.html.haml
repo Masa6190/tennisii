@@ -1,6 +1,18 @@
 .indexmain
-  %ul.indexmain__top
+  .indexmain__top
     新着一覧
-    %li.indexmain__top--content
-      タイトル
-      
+  - @posts.each do |post|
+    .indexmain__top-block
+      = link_to root_path do
+        .indexmain__top-block-contenttitle
+          = post.title
+        .indexmain__top-block-contentprefecture
+          場所：
+          = post.Prefecture
+        .indexmain__top-block-contentperson
+          募集人数：
+          = post.person
+          人
+        .indexmain__top-block-contentstarttime
+          開始日時
+          = post.starttime

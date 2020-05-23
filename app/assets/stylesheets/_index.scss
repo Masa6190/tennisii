@@ -1,0 +1,27 @@
+.indexmain {
+  &__top {
+    text-align: center;
+
+    &-block {
+      margin: auto;
+      color: blue;
+      width: 50%;
+      
+      &-contenttitle {
+        text-align: center;
+      }
+      
+      &-contentprefecture {
+        text-align: center;
+      }
+      
+      &-contentperson {
+        text-align: center;
+      }
+      
+      &-contentstarttime {
+        text-align: center;
+      }
+    }
+  }
+}
