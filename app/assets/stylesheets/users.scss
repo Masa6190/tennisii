@@ -6,4 +6,17 @@
   background-color: rgb(0, 255, 0);
   height: calc(100vh - 50px);
   margin-top: 50px;
+  font-size: larger;
+}
+
+input[type="email"] {
+  width: 300px;
+}
+
+input[type="text"] {
+  width: 300px;
+}
+
+input[type="password"] {
+  width: 300px;
 }
