@@ -3,7 +3,7 @@
     新着一覧
   - @posts.each do |post|
     .indexmain__top-block
-      = link_to root_path do
+      = link_to root_path, class:'toplink' do
         .indexmain__top-block-contenttitle
           = post.title
         .indexmain__top-block-contentprefecture

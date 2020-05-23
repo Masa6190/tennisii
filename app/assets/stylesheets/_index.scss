@@ -1,11 +1,13 @@
 .indexmain {
   &__top {
     text-align: center;
-
+    
     &-block {
+      border-style: solid;
       margin: auto;
-      color: blue;
-      width: 50%;
+      width: 30%;
+      margin-bottom: 20px;
+      
       
       &-contenttitle {
         text-align: center;
@@ -24,4 +26,11 @@
       }
     }
   }
+}
+
+.toplink {
+}
+
+.toplink:hover {
+  color: blue;
 }
