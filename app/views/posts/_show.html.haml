@@ -23,15 +23,34 @@
         参加費：
         = @post.money
         円
+    .postshow__top-comment
+      コメント
+      - if @comments
+        - @comments.each do |comment|
+          .postshow__top-comment-block
+            = link_to comment.user.name, "/users/#{comment.user_id}"
+            %span :
+            = comment.text
+            - if user_signed_in? && comment.user == current_user
+              = link_to "コメントを削除", post_comment_path(comment.post.id, comment.id), method: :delete
+            - elsif user_signed_in? && @post.user_id == current_user.id
+              = link_to "投稿主としてコメントを削除", post_comment_path(comment.post.id, comment.id), method: :delete
+            - else
     .postshow__top-btn
     - if user_signed_in?
       - if current_user.id == @post.user_id
         .postshow__top-btn-edit
-          = link_to "編集", edit_post_path(@post.id)
+          = link_to "募集文を編集", edit_post_path(@post.id)
         .postshow__top-btn-delete
-          = link_to "削除", post_path, method: :delete, class:"postdelete"
+          = link_to "募集文を削除", post_path, method: :delete, class:"postdelete"
+        .postshow__top-btn-comment
+          = form_with(model: [@post, @comment], local: true) do |form|
+            = form.text_area :text, placeholder: "コメントする", rows: "2"
+            = form.submit "コメントする"
       - else
         .postshow__top-btn-comment
-          コメント
+          = form_with(model: [@post, @comment], local: true) do |form|
+            = form.text_area :text, placeholder: "コメントする", rows: "2"
+            = form.submit "コメントする"
     - else
       = link_to "ログインして参加する", new_user_session_path, class:"loginbtn"
