@@ -1,5 +1,6 @@
 .postshow
   .postshow__top
+    %br/
     募集詳細
     .postshow__top-block
       .postshow__top-block-contenttitle
@@ -22,3 +23,8 @@
         参加費：
         = @post.money
         円
+    .postshow__top-btn
+      .postshow__top-btn-edit
+        =link_to "編集", edit_post_path(@post.id)
+      .postshow__top-btn-delete
+        削除
