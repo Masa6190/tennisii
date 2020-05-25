@@ -1,32 +1,38 @@
 .indexmain {
-  &__top {
-    text-align: center;
-    
-    &-block {
-      border-style: solid;
-      margin: auto;
-      width: 30%;
-      margin-bottom: 20px;
+  @include main;
+  
+    &__top {
+      text-align: center;
       
-      
-      &-contenttitle {
-        text-align: center;
-      }
-      
-      &-contentprefecture {
-        text-align: center;
-      }
-      
-      &-contentperson {
-        text-align: center;
-      }
-      
-      &-contentstarttime {
-        text-align: center;
+      &-block {
+        border-style: solid;
+        margin: auto;
+        width: 30%;
+        margin-top: 20px;
+        
+        
+        &-contenttitle {
+          text-align: center;
+        }
+
+        &-contentuser {
+          text-align: center;
+        }
+        
+        &-contentprefecture {
+          text-align: center;
+        }
+        
+        &-contentperson {
+          text-align: center;
+        }
+        
+        &-contentstarttime {
+          text-align: center;
+        }
       }
     }
   }
-}
 
 .toplink {
 }

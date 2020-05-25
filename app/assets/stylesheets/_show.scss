@@ -1,0 +1,15 @@
+.postshow {
+  @include main;
+  height: calc(100vh - 50px);
+
+  &__top {
+    text-align: center;
+    
+    &-block {
+
+      &-contenttitle {
+        font-size: xx-large;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.header {
+  height: 50px;
+  background-color: red;
+  width: 100vw;
+  position: fixed;
+
+  &__left {
+    font-size: 38px;
+    color: seagreen;
+    float: left;
+  }
+  &__right  {
+    text-align: right;
+    float: right;
+  }
+}

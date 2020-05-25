@@ -3,9 +3,12 @@
     新着一覧
   - @posts.each do |post|
     .indexmain__top-block
-      = link_to root_path, class:'toplink' do
+      = link_to post_path(post.id), class:'toplink' do
         .indexmain__top-block-contenttitle
           = post.title
+        .indexmain__top-block-contentuser
+          投稿者：
+          = post.user.name
         .indexmain__top-block-contentprefecture
           場所：
           = post.Prefecture
@@ -15,4 +18,4 @@
           人
         .indexmain__top-block-contentstarttime
           開始日時
-          = post.starttime
+          = post.starttime.strftime("%Y-%m-%d %H:%M")
