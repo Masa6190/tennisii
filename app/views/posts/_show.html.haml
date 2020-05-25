@@ -24,7 +24,14 @@
         = @post.money
         円
     .postshow__top-btn
-      .postshow__top-btn-edit
-        =link_to "編集", edit_post_path(@post.id)
-      .postshow__top-btn-delete
-        削除
+    - if user_signed_in?
+      - if current_user.id == @post.user_id
+        .postshow__top-btn-edit
+          = link_to "編集", edit_post_path(@post.id)
+        .postshow__top-btn-delete
+          = link_to "削除", post_path, method: :delete, class:"postdelete"
+      - else
+        .postshow__top-btn-comment
+          コメント
+    - else
+      = link_to "ログインして参加する", new_user_session_path, class:"loginbtn"
