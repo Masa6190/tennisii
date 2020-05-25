@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update]
   before_action :move_to_root, only: [:new]
+  before_action :correct_user, only: [:edit, :update]
 
   def index
     @posts = Post.all.order("id DESC")
@@ -21,15 +23,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path(@post.id), notice: "編集しました"
     else
@@ -44,11 +43,21 @@ class PostsController < ApplicationController
 
   private
 
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
   def move_to_root
     if user_signed_in?
     else
       flash[:alert] = "募集するににはユーザー登録が必要です"
       redirect_to root_path
+    end
+  end
+
+  def correct_user
+    if current_user.id !=  @post.user_id
+     redirect_to root_path
     end
   end
 
