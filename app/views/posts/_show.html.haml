@@ -1,0 +1,24 @@
+.postshow
+  .postshow__top
+    募集詳細
+    .postshow__top-block
+      .postshow__top-block-contenttitle
+        = @post.title
+      .postshow__top-block-contentuser
+        募集主：
+        = @post.user.name
+      .postshow__top-block-contentprefecture
+        場所：
+        = @post.Prefecture
+        = @post.place
+      .postshow__top-block-contentperson
+        募集人数：
+        = @post.person
+        人
+      .postshow__top-block-contentstarttime
+        開始日時：
+        = @post.starttime.strftime("%Y-%m-%d %H:%M")
+      .postshow__top-block-contentmoney
+        参加費：
+        = @post.money
+        円

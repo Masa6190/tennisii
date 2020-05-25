@@ -1,0 +1,14 @@
+@mixin main () {
+  margin-top: 50px;
+  margin-left: 150px;
+  width: calc(100vw - 50px);
+  height: 100%;
+}
+
+.wrapper {
+  height: 100%;
+  background-color: greenyellow;
+  &__main {
+    display: flex;
+  }
+}

@@ -1,5 +1,9 @@
 @import "./reset";
+@import "modules/mixin";
+@import "./header";
+@import "./sidebar";
 @import "./posts";
 @import "./newmain";
 @import "./users";
 @import "./index";
+@import "./show";
