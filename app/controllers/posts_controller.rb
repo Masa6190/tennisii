@@ -21,7 +21,20 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to post_path(@post.id), notice: "編集しました"
+    else
+      redirect_to edit_post_path, alert: "編集できません。入力必須項目を確認してください"
+    end
   end
 
   private
