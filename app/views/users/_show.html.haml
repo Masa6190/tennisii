@@ -1,0 +1,23 @@
+.indexmain
+  .indexmain__top
+    %br/
+    = @user.name
+    の投稿一覧
+  - @posts.each do |post|
+    .indexmain__top-block
+      = link_to post_path(post.id), class:'toplink' do
+        .indexmain__top-block-contenttitle
+          = post.title
+        .indexmain__top-block-contentuser
+          投稿者：
+          = post.user.name
+        .indexmain__top-block-contentprefecture
+          場所：
+          = post.Prefecture
+        .indexmain__top-block-contentperson
+          募集人数：
+          = post.person
+          人
+        .indexmain__top-block-contentstarttime
+          開始日時
+          = post.starttime.strftime("%Y-%m-%d %H:%M")
