@@ -3,7 +3,8 @@
     = link_to "Tennishii",root_path, id: "tennshiilogo"
   %ul.header__right
     %li.header__right--notice
-      通知
+      -if user_signed_in?
+        = current_user.name
     %li.header__right--mypage
       - if user_signed_in?
         = link_to "マイページ", new_user_session_path, class: "header__right--btn"
