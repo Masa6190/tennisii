@@ -44,12 +44,15 @@ class PostsController < ApplicationController
     redirect_to root_path, alert: "削除しました"
   end
 
+  def search
+    @posts = Post.search(params[:search]).order(id: "DESC")
+    @searchtext = params[:search]
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :main, :Prefecture, :place, :person, :starttime, :money,user_id: current_user.id).merge(user_id: current_user.id) 
   end
-
-  private
 
   def set_post
     @post = Post.find(params[:id])
