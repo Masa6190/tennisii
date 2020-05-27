@@ -38,6 +38,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path, alert: "削除しました"
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :main, :Prefecture, :place, :person, :starttime, :money,user_id: current_user.id).merge(user_id: current_user.id) 
