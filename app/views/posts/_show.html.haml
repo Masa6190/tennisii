@@ -7,7 +7,7 @@
         = @post.title
       .postshow__top-block-contentuser
         募集主：
-        = @post.user.name
+        = link_to @post.user.name, "/users/#{@post.user_id}"
       .postshow__top-block-contentprefecture
         場所：
         = @post.Prefecture
