@@ -49,6 +49,12 @@ class PostsController < ApplicationController
     @searchtext = params[:search]
   end
 
+  def showcomments
+    @user = current_user.id
+    comments_post = Comment.where(user_id: "#{@user}").pluck(:post_id)
+    @posts = Post.where(id: comments_post )
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :main, :Prefecture, :place, :person, :starttime, :money,user_id: current_user.id).merge(user_id: current_user.id) 
