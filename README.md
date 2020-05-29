@@ -36,14 +36,18 @@
 - ページネーション
 # DEMO
 ##### （ビューは全て仮となっております、まずは機能の実装を優先しているため）
+トップページから新規投稿、トップページから募集詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/4b09a8eac8e26c313f13b3d3df731c85.gif)](https://gyazo.com/4b09a8eac8e26c313f13b3d3df731c85)
 
-トップページから募集詳細ページへ（2回目の詳細はコメント確認のため）
-[![Image from Gyazo](https://i.gyazo.com/6614d0cd205a3f8525055aee04d9a81e.gif)](https://gyazo.com/6614d0cd205a3f8525055aee04d9a81e)
+募集詳細ページからコメントを投稿、その後に削除
+[![Image from Gyazo](https://i.gyazo.com/0d5b32ae2a9a79f4ffdbe943e4fb4412.gif)](https://gyazo.com/0d5b32ae2a9a79f4ffdbe943e4fb4412)
 
-トップページから新規投稿→トップページ→地域別一覧ページ→地域別新着一覧ページ
-[![Image from Gyazo](https://i.gyazo.com/547106a10fad127477e26f4031cd5917.gif)](https://gyazo.com/547106a10fad127477e26f4031cd5917)
+トップページから地域別一覧ページへ（動画では青森、北海道、岩手の募集があり、その中の北海道を表示）
+[![Image from Gyazo](https://i.gyazo.com/ef487d92fc27a3eebb4ee9200dcd1715.gif)](https://gyazo.com/ef487d92fc27a3eebb4ee9200dcd1715)
 
-
+トップページから募集詳細ページ、その後に過去閲覧ページへ
+  - （トップページには3件募集が投稿されておりますが、2件にしかコメントしていないため最後のページでは2件しか表示されておりません。）
+  [![Image from Gyazo](https://i.gyazo.com/34456f312063640182b87a922be09a21.gif)](https://gyazo.com/34456f312063640182b87a922be09a21)
 # DB設計
 ## usersテーブル
 |Column|Type|Options|
