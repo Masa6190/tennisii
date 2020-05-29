@@ -6,23 +6,38 @@
       .postshow__top-block-contenttitle
         = @post.title
       .postshow__top-block-contentuser
-        募集主：
+        %span.show 募集主：
         = link_to @post.user.name, "/users/#{@post.user_id}"
+        %br/
+        %br/
+      .postshow__top-block-contentmain
+        %span.show 詳細：
+        = @post.main
+        %br/
+        %br/
       .postshow__top-block-contentprefecture
-        場所：
+        %span.show 場所：
         = @post.Prefecture
         = @post.place
+        %br/
+        %br/
       .postshow__top-block-contentperson
-        募集人数：
+        %span.show 募集人数：
         = @post.person
         人
+        %br/
+        %br/
       .postshow__top-block-contentstarttime
-        開始日時：
+        %span.show 開始日時：
         = @post.starttime.strftime("%Y-%m-%d %H:%M")
+        %br/
+        %br/
       .postshow__top-block-contentmoney
-        参加費：
+        %span.show 参加費：
         = @post.money
         円
+        %br/
+        %br/
     .postshow__top-comment
       コメント
       - if @comments
@@ -36,6 +51,10 @@
             - elsif user_signed_in? && @post.user_id == current_user.id
               = link_to "投稿主としてコメントを削除", post_comment_path(comment.post.id, comment.id), method: :delete
             - else
+      %br/
+      %br/
+      %br/
+      %br/
     .postshow__top-btn
     - if user_signed_in?
       - if current_user.id == @post.user_id
@@ -43,6 +62,9 @@
           = link_to "募集文を編集", edit_post_path(@post.id)
         .postshow__top-btn-delete
           = link_to "募集文を削除", post_path, method: :delete, class:"postdelete"
+          %br/
+          %br/
+          %br/
         .postshow__top-btn-comment
           = form_with(model: [@post, @comment], local: true) do |form|
             = form.text_area :text, placeholder: "コメントする", rows: "2"

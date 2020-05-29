@@ -13,24 +13,24 @@
 ActiveRecord::Schema.define(version: 2020_05_25_135140) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "post_id"
-    t.text "text"
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "title"
-    t.text "main"
-    t.string "Prefecture"
-    t.text "place"
-    t.integer "person"
-    t.datetime "starttime"
-    t.integer "money"
+    t.text "title", null: false
+    t.text "main", null: false
+    t.string "Prefecture", null: false
+    t.text "place", null: false
+    t.integer "person", null: false
+    t.datetime "starttime", null: false
+    t.integer "money", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.integer "user_id", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
