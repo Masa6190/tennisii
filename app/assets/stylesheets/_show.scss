@@ -6,12 +6,21 @@
     text-align: center;
     
     &-block {
-      background-color: greenyellow;
-      height: 300px;
+      margin: auto;
+      height: 100%;
+      width: 600px;
 
       &-contenttitle {
         font-size: xx-large;
       }
+
+      &-contentmain {
+        
+      }
     }
   }
+}
+
+.show {
+  font-size: 20px;
 }
