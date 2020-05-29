@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
     collection do
       get 'search'
+      get 'showcomments'
     end
   end
   
