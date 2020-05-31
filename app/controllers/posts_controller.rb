@@ -50,9 +50,13 @@ class PostsController < ApplicationController
   end
 
   def showcomments
-    @user = current_user.id
-    comments_post = Comment.where(user_id: "#{@user}").pluck(:post_id)
-    @posts = Post.where(id: comments_post )
+    if user_signed_in?
+      @user = current_user.id
+      comments_post = Comment.where(user_id: "#{@user}").pluck(:post_id)
+      @posts = Post.where(id: comments_post )
+    else
+      redirect_to root_path, alert: "ログインしてください"
+    end
   end
 
   private
